@@ -11,13 +11,16 @@ import org.testng.annotations.Test;
 
 import com.skillio.base.Keyword;
 import com.skillio.base.LocatorType;
+import com.skillio.base.Locators;
 import com.skillio.base.TestBase;
+import com.skillio.pages.HomePage;
+
 import static com.skillio.base.Keyword.*; //Static import
 import static com.skillio.base.LocatorType.*;//
 import static com.skillio.utils.FileUtility.*;
 
 
-
+import static com.skillio.pages.HomePage.*;
 public class goibibo extends TestBase {
 	//RemoteWebDriver driver ;
 	
@@ -66,12 +69,41 @@ public class goibibo extends TestBase {
 		ClickOnElement(CSSSELECTOR,getLocator("login_signup_popup_close_btn"));  
 		//locators.property and fileutility vala he yeh
 		
-		ClickOnElement(CSSSELECTOR, "div.sc-12foipm-2:nth-child(1)");
-		ClickOnElement(CSSSELECTOR, "div.sc-12foipm-25.fbAAhv input");
-		enterText(CSSSELECTOR, "div.sc-12foipm-25 input","Mumbai");
-					
-	
+		//ClickOnElement(CSSSELECTOR, "div.sc-12foipm-2:nth-child(1)");
+		//ClickOnElement(CSSSELECTOR, "div.sc-12foipm-25.fbAAhv input");
+		//enterText(CSSSELECTOR, "div.sc-12foipm-25 input","Mumbai");
+
+		ClickOnElement(CSSSELECTOR, Locators.from_text_box);
+		ClickOnElement(CSSSELECTOR, Locators.from_text_input);
+		enterText(CSSSELECTOR, Locators.city_name,"Mumbai");
+		
 	}
+	
+	//sing Homepage static import and Page Object Model
+	@Test
+	public void usingPOM() throws InterruptedException {
+		//imported from homepage new pacakage
+		Thread.sleep(3000);
+		clickOnloginSignupPopupCloseBtn();
+		clickOnFromTextBox();
+		clickOnFromTextBoxInput();
+		enterCityNameInTextBox("Mumbai",Keys.ENTER);
+		
+		
+		
+	}
+
+
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
