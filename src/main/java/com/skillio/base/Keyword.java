@@ -80,23 +80,6 @@ public class Keyword {
 	public static void quitAllWindows() {
 		driver.quit();
 	}
-
-	//made for By class Page Object Model
-	public static void ClickOnElement( By locator) {
-		driver.findElement(locator).click();
-	}
 	
-	public static void enterText(By from_text_input, CharSequence...text) {
-		driver.findElement(from_text_input).sendKeys(text);
-	}
 	
 }
-
-
-
-
-
-
-
-
-

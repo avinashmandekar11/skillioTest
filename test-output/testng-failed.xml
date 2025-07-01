@@ -5,8 +5,8 @@
     <classes>
       <class name="com.framework.goibibo">
         <methods>
+          <include name="homepage"/>
           <include name="launchBrowser"/>
-          <include name="usingPOM"/>
         </methods>
       </class> <!-- com.framework.goibibo -->
     </classes>
