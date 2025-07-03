@@ -7,6 +7,7 @@ import org.openqa.selenium.bidi.browsingcontext.Locator;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import com.skillio.base.Keyword;
@@ -83,20 +84,28 @@ public class goibibo extends TestBase {
 	@Test
 	public void usingPOM() throws InterruptedException {
 		//imported from homepage new pacakage
-		Thread.sleep(3000);
+		//Thread.sleep(2000);
+		//wait is applied using WaitFor class inside Homapge we called methods and directly spllied there..
+		
+		//creating object using PageFactory when we do by webelement to initalize the varaible 
+		HomePage homepage=PageFactory.initElements(driver,HomePage.class);
 		clickOnloginSignupPopupCloseBtn();
+		//closePopUp();  page factory model webelement 
 		clickOnFromTextBox();
 		clickOnFromTextBoxInput();
-		enterCityNameInTextBox("Mumbai",Keys.ENTER);
+		enterCityNameInTextBox("Mumbai");
+		Thread.sleep(2000);
+		inputKey(Keys.ENTER);
+		enterCityNameInTextBox("Pune");
 		
+		Thread.sleep(2000);
+		inputKey(Keys.ENTER);
 		/// feature -automation-branch
 		
 		
 		
 	}
 
-
-	
 	
 }
 
