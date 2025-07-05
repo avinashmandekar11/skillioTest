@@ -3,6 +3,7 @@ package com.skillio.base;
 import static org.testng.Assert.assertThrows;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -86,9 +87,16 @@ public class Keyword {
 		driver.findElement(locator).click();
 	}
 	
-	public static void enterText(By from_text_input, CharSequence...text) {
+	public static void enterText(By from_text_input, String text) {
 		driver.findElement(from_text_input).sendKeys(text);
 	}
+	public static void enterKey(By from_text_input, Keys key) {
+		driver.findElement(from_text_input).sendKeys(key);
+
+	}
+	
+	
+	
 	
 }
 
